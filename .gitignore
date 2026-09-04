@@ -1,0 +1,70 @@
+HELP.md
+.gradle
+build/
+**/build
+/ms-lib/build/
+/ms-item-api/build/
+/ms-catalog-api/build/
+/ms-consumer/build/
+
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+/.idea/
+/.idea/
+
+# Gradle
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Java
+*.class
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+*.env
+
+# Local configuration
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# OS files
+.DS_Store
+Thumbs.db

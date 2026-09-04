@@ -1,0 +1,91 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'ca.cutterslade.gradle:gradle-dependency-analyze:1.0.3'
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.6.1'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java-library'
+}
+
+group 'com.c2.lc.lib'
+version = '2.0.0'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.5.2'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.6.1'
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.6.1'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.1'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux:2.6.1'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket:2.6.1'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.6.1'
+    implementation 'org.springframework.boot:spring-boot-autoconfigure:2.6.1'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    implementation 'org.projectreactor:reactor-spring:1.0.1.RELEASE'
+    implementation 'io.springfox:springfox-swagger2:3.0.0'
+    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    implementation 'org.json:json:20210307'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    implementation 'commons-codec:commons-codec:1.9'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.fasterxml.uuid:java-uuid-generator:4.0.1'
+    implementation 'log4j:log4j:1.2.17'
+    implementation 'com.sun.jersey:jersey-client:1.19.4'
+
+    implementation 'org.springframework.kafka:spring-kafka:2.7.6'
+
+    implementation group: 'com.google.zxing', name: 'core', version: '3.4.0'
+    implementation group: 'com.google.zxing', name: 'javase', version: '3.4.0'
+
+    implementation group: 'com.bazaarvoice.jolt', name: 'jolt-complete', version: '0.1.1'
+
+    implementation 'com.microsoft.azure:azure-storage:8.6.6'
+    implementation group: 'com.azure', name: 'azure-communication-sms', version: '1.0.3'
+
+    implementation 'com.azure:azure-messaging-eventhubs:5.10.3'
+    implementation 'io.projectreactor:reactor-core:3.4.12'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'io.projectreactor:reactor-test:3.4.12'
+    testImplementation 'org.springframework.security:spring-security-test:5.5.1'
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.6.1') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+
+
+
+// ms-lib dependency
+//dependencies {
+//    implementation files('../ms-lib/build/libs/ms-lib-2.0.0.jar')
+//}
+
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    enabled = true
+    archiveClassifier.set("")
+}
+
+
